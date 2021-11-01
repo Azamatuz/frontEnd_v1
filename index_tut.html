@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Flash Card App</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-text="deckName"></h1>
+
+        <!-- <div @click="flipped = !flipped" class="card">
+                <h2 v-text="flipped ? '' : cards[index].front"></h2>
+                <div v-html="flipped ? cards[index].back : ''"></div>
+            </div> -->
+
+        <a :href="readMoreUrl">read more</a>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
+    <script>
+        const FlashCardApp = {
+                data() {
+                    return {
+                        deckName: 'Vue.js Fundamentals',
+                        games: [ {
+                            "id": 6655,
+                            "season-id": 2021,
+                            "name": "Buf  v Pit ",
+                            "date": "2021-11-16",
+                            "time": "19:00:00",
+                            "guessing-date": "2021-10-31",
+                            "accuracy": true,
+                            "away-team": {
+                                "id": 3,
+                                "team-key": "l.nhl.com-t.12",
+                                "team-gaa": 3.2,
+                                "team-gaa-rank": 21,
+                                "name": "Buffalo Sabres",
+                                "abbreviation": "Buf",
+                                "guessing-score": 2.629979,
+                                "actual-score": 0,
+                            }
+                        }
+                        ]
+                    },
+
+                };
+
+                const app = Vue.createApp(FlashCardApp).mount('#app');
+    </script>
+</body>
+
+</html>
