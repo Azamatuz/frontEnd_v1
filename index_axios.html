@@ -1,0 +1,32 @@
+<script src="https://unpkg.com/vue@3.0.2"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<template lang="">
+    <div id="app">
+        {{ info }}
+    </div>
+</template>
+<script>
+    export default {
+
+    }
+</script>
+
+
+<script>
+    const Vue({
+    el: '#app',
+    data () {
+      return {
+        info: null
+      }
+    },
+    mounted () {
+      axios
+        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then(response => (this.info = response))
+    }
+  })
+</script>
+<style lang="">
+
+</style>
